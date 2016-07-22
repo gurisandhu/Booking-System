@@ -1,0 +1,683 @@
+$color1: #1d252d;
+$color2: #9b204c;
+$color3: #1d252d;
+$color4: #e1e1e1;
+$color5: #d0d3d4;
+$color6: #5b6770;
+$color7: #7c878e;
+
+$font-family1: AvenirLTStd, sans-serif;
+
+@mixin placeholder($placeholder_color){
+  ::-webkit-input-placeholder {
+   color: $placeholder_color;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+     color: $placeholder_color;
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+    color: $placeholder_color;
+  }
+
+  :-ms-input-placeholder {  
+    color: $placeholder_color;
+  }
+}
+
+@mixin transition($time){
+	-webkit-transition: all $time ease;
+	-moz-transition: all $time ease;
+	-ms-transition: all $time ease;
+	-o-transition: all $time ease;
+	transition: all $time ease;
+}
+
+@mixin transform($degree){
+	-webkit-transform: rotate($degree+deg);
+	   -moz-transform: rotate($degree+deg);
+	    -ms-transform: rotate($degree+deg);
+	     -o-transform: rotate($degree+deg);
+	        transform: rotate($degree+deg);
+}
+
+@mixin button-background($color){
+	background-color: $color;
+	&:hover{
+		background-color: darken($color, 10%);
+	}
+}
+.july-2016-wp-pages{
+	&, *{
+		font-size: inherit;
+		padding: 0;
+		margin: 0;
+		border: none;
+		outline: none;
+		font-weight: inherit;
+		color: inherit;
+		background-color: inherit;
+		list-style: none;
+		font-family: $font-family1;
+		-webkit-font-smoothing: antialiased;
+		-moz-font-smoothing: antialiased;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.fa{
+		font-family: FontAwesome;
+	}
+	section{
+		background-color: #f1f1f1;
+		padding: 3% 0;
+	}
+	.container{
+		max-width: 1115px;
+		margin: auto;
+		width: 100%;
+		padding: 0 2%;
+		&:after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+	}
+	.full-width{
+		float: left;
+		width: 100%;
+	}
+	.heading{
+		float: left;
+		width: 75%;
+	}
+	.head-buttons{
+		float: left;
+		width: 25%;
+	}
+	h3{
+		font-size: 27px;
+		color: $color1;
+	}
+	.button_select{
+		font-size: 17px;
+		letter-spacing: 1px;
+		word-spacing: 1px;
+		font-weight: 500;
+	}
+	.but-style1{
+		@extend .button_select;
+		color: white;
+		text-transform: uppercase;	
+		cursor: pointer;
+		@include button-background($color2);
+	}
+	.but-style4{
+		font-size: 17px;
+		color: white;
+		text-transform: uppercase;
+		cursor: pointer;
+		@include button-background($color6);
+	}
+	.but-style5{
+		font-size: 17px;
+		color: white;
+		text-transform: uppercase;
+		cursor: pointer;
+		@include button-background($color7);
+	}
+	.head-buttons{
+		button{
+			@extend .full-width;
+			margin-bottom: 3%;
+			@extend .but-style1;
+			padding: 5% 5%;
+		}
+		.select-container{
+			span{
+				float: left;
+				width: 30%;
+			}
+			select{
+				float: left;
+				width: 70%;
+			}
+		}
+	}
+	select{
+		background-color: transparent;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		-o-appearance: none;
+ 		display: inline-block;
+		color: $color3;
+		z-index: 1;
+		position: relative;
+	}
+	b{
+		font-weight: bold;
+	}
+	.select-style1{
+		position: relative;
+		@extend .full-width;
+		&:after{
+			position: absolute;
+		    content: '\F107';
+		    display: inline-block;
+		    top: -1px;
+		    right: 5px;
+		    font-family: FontAwesome;
+		    font-size: 45px;
+		    color: #58585a;
+		    z-index: 0;
+		}
+	}
+	.select-container{
+		padding: 5% 0 5% 5%;
+		background-color: white;
+		@extend .button_select;
+		@extend .select-style1;
+		span{
+			display: inline-block;
+		}
+	}
+	.list-of-bookings{
+		@extend .full-width;
+		margin-top: 3%;
+		margin-bottom: 3%;
+		ul{
+			@extend .full-width;
+			li{
+				float: left;
+				display: inline-block;
+				border-right: 1px solid $color4;
+				padding: 2% 1.2%;
+				letter-spacing: 1px;
+				&:nth-of-type(1){
+					width: 20%;
+				}
+				&:nth-of-type(2){
+					width: 20%;	
+				}
+				&:nth-of-type(3){
+					width: 20%;
+				}
+				&:nth-of-type(4){
+					width: 20%;
+				}
+				&:nth-of-type(5){
+					width: 20%;
+					border-right: none;
+					text-align: center;
+				}
+			}
+		}
+		ul.list-heading{
+			li{
+				background-color: $color1;
+				color: white;
+				text-transform: uppercase;
+				font-size: 17px;
+			}
+		}
+		ul.list-content{
+			li{
+				label{
+					background-color: $color1;
+					color: white;
+					text-transform: uppercase;
+					font-size: 17px;
+					padding: 1.4%;
+					float: left;
+					width: 25%;
+				}
+				color: $color1;
+				font-size: 20px;
+				label{
+					display: none;
+				}
+				&:nth-of-type(1){
+					font-weight: bold;
+				}
+				&:nth-of-type(5){
+					font-weight: bold;
+					color: $color2;
+					cursor: pointer;
+					&:hover{
+						div{
+							text-decoration: underline;	
+						}
+					}
+				}
+			}
+			&:nth-of-type(even){
+				background-color: white;
+			}
+		}
+	}
+	.pagination{
+		@extend .full-width;
+		text-align: center;
+		ul{
+			width: auto;
+			display: inline-block;
+			height: auto;
+			margin: auto;
+			li{
+				float: left;
+				font-size: 20px;
+				padding: 4px 11px;
+				cursor: pointer;
+				@include transition(.3s);
+				&.active, &:hover {
+					font-weight: bold;
+					background-color: $color5;
+				}
+				&:first-child{
+					cursor: default;
+					&:hover{
+						font-weight: normal;
+						background-color: inherit;
+					}
+				}
+				a{
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	.font-style1{
+		font-size: 20px;
+		color: $color1;
+		letter-spacing: 1px;
+	}
+	.but-style2{
+			padding: 3% 4%;
+	}
+	.but-style3{
+		color: $color1;
+		cursor: pointer;
+		@include button-background($color5);
+	}
+	.new-booking{
+		margin-top: 5%;
+		label, halfcol, col4{
+			margin-bottom: 2.5%;
+			@extend .font-style1;
+			span{
+				@extend .full-width;
+				@extend .font-style1;
+				margin-bottom: 1%;
+			}
+			input, textarea{
+				@extend .font-style1;
+				background-color: white;
+				border: 1px solid $color4;
+				@extend .full-width;
+				font-weight: bold;
+				padding: 10px;
+				color: $color1;
+			}
+			.select-style1{
+				background-color: white;
+			}
+			select, option{
+				@extend .font-style1;
+				background-color: transparent;
+				border: 1px solid $color4;
+				@extend .full-width;
+				font-weight: bold;
+				padding: 10px;
+				color: $color1;	
+			}
+			input, select, option{
+				height: 45px;
+			}
+			@include placeholder($color1);
+		}
+		button{
+			@extend .but-style2;
+			@extend .but-style1;
+			float: right;
+		}
+		a{
+			@extend .but-style2;
+			@extend .but-style3;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: 17px;
+			float: left;
+		}
+	}
+	halfcol, .half-col{
+		float: left;
+		width: 50%;
+		padding-right: 1%;
+		&:nth-of-type(2n+0){
+			padding-right: 0;
+		}
+	}
+	col4{
+		width: 33.33%;
+		float: left;
+		padding-right: 1%;
+		&:nth-of-type(3n+0){
+			padding-right: 0;
+		}
+	}
+
+	.list-of-touchpoints{
+		margin-top: 4%;
+		@extend .full-width;
+		ul{
+			@extend .full-width;
+		}
+	}
+	.list-style-1{
+		background-color: $color6;
+		color: white;
+		font-size: 17px;
+		text-transform: uppercase;
+	}
+	.list-style-2{
+		background-color: white;
+		color: $color3;
+		font-size: 20px;
+	}
+	.list-style-3{
+		background-color: $color1;
+		color: white;
+		font-size: 17px;
+		text-transform: uppercase;
+	}
+	.customer-heading, .booking-headings{
+		margin-top: 3%;
+		li{
+			@extend .list-style-1;
+		}
+	}
+	.customer-details, .booking-details{
+		li{
+			@extend .list-style-2;
+			border-right: 1px solid $color4;
+			&:last-child{
+				border-right: none;
+			}
+			label{
+				@extend .list-style-1;
+			}
+		}
+	}
+
+	.customer-details, .booking-details, .schedule-details{
+		li{
+			label{
+				display: none;
+			}
+		}
+	}
+	.customer-heading, .customer-details{
+		li{
+			float: left;
+			padding: 1.3% 1.5%;
+			input{
+				@extend .full-width;
+			}
+			&:nth-of-type(1){
+				width: 23%;	
+			}
+			&:nth-of-type(2){
+				width: 47%;
+			}
+			&:nth-of-type(3){
+				width: 30%;
+			}
+		}
+	}
+	.booking-details{
+		li{
+			height: 51px;
+			button{
+				cursor: pointer;	
+			}
+		}
+	}
+	.booking-headings, .booking-details{
+		li{
+			float: left;
+			padding: 1.3% 1.1%;
+			input{
+				@extend .full-width;
+				& ::-webkit-inner-spin-button,
+					&::-webkit-calendar-picker-indicator {
+					    display: none;
+					    -webkit-appearance: none;
+					    -moz-appearance: none;
+					        appearance: none;
+					}
+			}
+			@include placeholder($color1);
+			&:nth-of-type(1){
+				width: 16%;	
+			}
+			&:nth-of-type(2){
+				width: 16%;	
+			}
+			&:nth-of-type(3){
+				width: 16%;	
+			}
+			&:nth-of-type(4){
+				width: 16%;	
+			}
+			&:nth-of-type(5){
+				width: 16%;	
+			}
+			&:nth-of-type(6){
+				width: 20%;	
+			}
+		}
+	}
+	.schedule-heading{
+		margin-top: 3%;
+		li{
+			@extend .list-style-3;
+			padding: 1.3% 1.1%;
+		}
+	}
+	.schedule-details{
+		counter-increment: step-counter;
+		position: relative;
+		&:before{
+			content: counter(step-counter)"." ;
+			font-size: 20px;
+			color: $color1;
+			padding: 2px;
+			position: absolute;
+			left: 16px;
+			top: 12px;
+		}
+		li{
+			background-color: white;
+			font-size: 20px;
+			color: $color1;
+			@include placeholder($color1);
+			label{
+				@extend .list-style-3;
+			}
+		}
+		> li{
+			height: 51px;
+			border-right: 1px solid $color4;
+			border-top: 1px solid $color4;
+			&:nth-of-type(1){
+				background-color: $color5;
+				font-size: 17px;
+				text-transform: uppercase;
+				padding: 1.3% 1.1% 1.3% 4%;
+			}
+			&:nth-of-type(2){
+				padding: 1.3% .5% 1.3% 1.3%;
+			}
+			&:nth-of-type(3){
+				padding: 1%;
+			}
+			&:last-child{
+				border-right: none;
+			}
+			span{
+				margin-right: 10px;
+			}
+		}
+	}
+	.schedule-heading, .schedule-details{
+		li{
+			float: left;
+			&:nth-of-type(1){
+				width: 40%;	
+			}
+			&:nth-of-type(2){
+				width: 31%;	
+			}
+			&:nth-of-type(3){
+				width: 29%;	
+			}
+		}
+	}
+	ul.actions{
+		li{
+			span{
+				margin-left: 7px;
+				font-size: 18px;
+				vertical-align: text-top;
+				cursor: pointer;
+			}
+			&:nth-of-type(1){
+				width: 90%;
+				text-align: center;
+			}
+			&:nth-of-type(2){
+				width: 10%;
+			}
+			.fa{
+				font-size: 28px;
+				cursor: pointer;
+			}
+		}
+	}
+	.touchpoint-calculation{
+		margin-top: 2%;
+		li{
+			float: left;
+			button, input{
+				@extend .full-width;
+				display: inline-block;
+				height: 53px;
+			}
+			&:nth-of-type(1){
+				width: 50%;
+				input{
+					padding: 3% 2.5%;
+					background-color: white;
+					font-size: 19px;
+					color: $color1;
+					letter-spacing: inherit;
+					word-spacing: normal;
+				}
+				@include placeholder($color1);
+			}
+			&:nth-of-type(2){
+				width: 24%;
+				margin-right: 1%;
+				button{
+					@extend .but-style5;	
+				}
+			}
+			&:nth-of-type(3){
+				width: 25%;
+				button{
+					@extend .but-style4;	
+				}
+			}
+		}
+	} //end of touchpoint-calculation
+	.touchpoint-buttons-area{
+		margin-top: 2%;
+		li{
+			button{
+				font-size: 17px;
+				text-transform: uppercase;
+				padding: 3% 4%;
+			}
+			&:nth-of-type(1){
+				button{
+					@extend .but-style3;
+				}
+			}
+			&:nth-of-type(2){
+				button{
+					float: right;
+					@extend .but-style1;
+				}
+			}
+		}
+	}
+	.booking-history{
+		margin-top: 6%;
+		&, li{
+			@extend .full-width;
+		}
+		li{
+			color: $color1;
+			font-size: 20px;
+			margin-bottom: 1%;
+			&:first-child{
+				text-transform: uppercase;
+				font-size: 17px;
+				margin-bottom: 4%;
+			}
+		}
+	}
+} //End of .july-2016-wp-pages
+.ui-widget.ui-widget-content{
+	background-color: $color5;
+}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover{
+	background-color: $color1;
+	border-color: $color1;
+}
+.count{
+	min-width: 32px;
+	@include transition(.3s);
+	display: inline-block;
+	text-align: center;
+}
+.new-booking-validation, .touchpoint-validation{
+	@extend .full-width;
+	border: 1px solid;
+	padding: 1%;
+	margin-bottom: 2%; 
+	@include transition(.3s);
+	display: none;
+	p{
+		margin-bottom: 0.5%;
+	}
+	li{
+		@extend .full-width;
+		list-style: disc;
+		margin-bottom: 1%;
+		padding-left: 2%;
+	}
+}
+.error-input{
+	@include transition(.4s);
+	border: 1px solid $color2!important;
+}
+.form-succeed{
+	border: 2px solid #799e7c;
+	p{
+		color: #799E7C;
+	}
+}
+// Responsive style sheet has added separtely
+@import 'responsive';

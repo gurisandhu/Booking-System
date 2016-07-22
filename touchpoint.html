@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Booking Revisions</title>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="july-2016-wp-pages">
+	<section>
+		<div class="container">
+			<div class="full-width">
+				<h3><b>Edit the Booking for {CustomerName}</b> Edit Touchpoint Process</h3>
+			</div>
+			<form name="touchpoint-form" action="" class="list-of-touchpoints" method="POST" onsubmit="return validateBooking()" method="POST">
+				<div id="touchpoint-validation" class="touchpoint-validation"></div>
+				<ul class="customer-heading">
+					<li>Name</li>
+					<li>Email</li>
+					<li>Phone Number</li>
+				</ul>
+				<ul class="customer-details">
+					<li><label>Name</label><div><input type="text" name="flname"></div></li>
+					<li><label>Email</label><div><input type="email" name="email"></div></li>
+					<li><label>Phone</label><div><input type="text" name="phone"></div></li>
+				</ul>
+
+				<ul class="booking-headings">
+					<li>Booked by</li>
+					<li>Styling date</li>
+					<li>Styling time</li>
+					<li>Shoot date</li>
+					<li>Stylist</li>
+					<li>Actions</li>
+				</ul>
+				<ul class="booking-details">
+					<li><label>Booked by</label><div>Sarah-Jane</div></li>
+					<li><label>Styling date</label><div><input class="datepicker" type="text" name="style_date" placeholder="8/12/2016" value=""></div></li>
+					<li><label>Styling time</label><div><input type="text" name="time"></div></li>
+					<li><label>Shoot date</label><div><input class="datepicker" type="text" value="" name="shoot_date" placeholder="04/31/2016"></div></li>
+					<li><label>Stylist</label><div><input type="text" name="stylist"></div></li>
+					<li><label>Actions</label><div><button>Reschedule</button> / <button>cancel</button></div></li>
+				</ul>
+
+				<ul class="schedule-heading">
+					<li>Customer notification Name</li>
+					<li>Schedule</li>
+					<li>Actions</li>
+				</ul>
+				<div id="sortable" class="full-width">
+					<ul class="schedule-details ui-state-default" data-index-number="1">
+						<li><label>Customer notification Name</label><div>Booked older ladies</div></li>
+						<li><label>Schedule</label><div><span>Sent</span><input type="text" placeholder="02/11/2016" class="datepicker"  name="shedule-date" value="" ></div></li>
+						<li><label>Actions</label><div>
+							<ul class="actions">
+								<li class="remove"><i class="fa fa-trash-o"></i><span>Delete</span></li>
+								<li><i class="fa fa-arrows"></i></li>
+							</ul></div>
+						</li>
+					</ul>
+					<ul class="schedule-details ui-state-default" data-index-number="2">
+						<li><label>Customer notification Name</label><div>Booked older ladies</div></li>
+						<li><label>Schedule</label><div><span>Sent</span><input type="text" placeholder="02/11/2016" class="datepicker"  name="shedule-date" value="" ></div></li>
+						<li><label>Actions</label><div>
+							<ul class="actions">
+								<li class="remove"><i class="fa fa-trash-o"></i><span>Delete</span></li>
+								<li><i class="fa fa-arrows"></i></li>
+							</ul></div>
+						</li>
+					</ul>
+					<ul class="schedule-details ui-state-default" data-index-number="3">
+						<li><label>Customer notification Name</label><div>Booked older ladies</div></li>
+						<li><label>Schedule</label><div><span>Sent</span><input type="text" placeholder="02/11/2016" class="datepicker"  name="shedule-date" value="" ></div></li>
+						<li><label>Actions</label><div>
+							<ul class="actions">
+								<li class="remove"><i class="fa fa-trash-o"></i><span>Delete</span></li>
+								<li><i class="fa fa-arrows"></i></li>
+							</ul></div>
+						</li>
+					</ul>
+				</div>
+				<ul class="touchpoint-calculation">
+					<li>
+						<input type="text" placeholder="Type in the name of the email that you're looking to add..">
+					</li>
+					<li>
+						<button>Add touchpoint</button>
+					</li>
+					<li>
+						<button>Re-calculate dates</button>
+					</li>
+				</ul>
+
+				<ul class="touchpoint-buttons-area">
+					<li class="half-col">
+						<button>Cancel &amp; go back to bookings</button>
+					</li>
+					<li class="half-col">
+						<button type="submit">Save touchpoint process</button>
+					</li>
+				</ul>
+
+				<ul class="booking-history">
+					<li>Booking history</li>
+					<li>10/13/2012: Sarah-jane made the booking.</li>
+					<li>10/13/2012: Sarah-jane made the booking.</li>
+				</ul>
+			</form>
+		</div>
+	</section>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	
+      <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	
+	<script type="text/javascript" src="assets/script.js"></script>
+</body>
+</html>
